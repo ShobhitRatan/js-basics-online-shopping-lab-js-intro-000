@@ -18,14 +18,17 @@ function addToCart(item) {
 
 function viewCart() {
   // write your code here
-  if (cart.length === 0) {
-    return 'Your shopping cart is empty.';
+  if (cart.length===0){
+      return "Your shopping cart is empty."
+
   }
   else if (cart.length === 1) {
-    return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}.`;
+      var itemObject = cart[0]
+      return `In your cart, you have ${itemObject.itemName} at $${itemObject.itemPrice}.`
+
   }
   else if (cart.length === 2) {
-    var string = "In your cart, you have "
+      var string = "In your cart, you have "
         for (var i = 0; i < cart.length; i++){
           if (i === 0){
              string += `${cart[i].itemName} at $${cart[i].itemPrice}, and `
@@ -34,18 +37,18 @@ function viewCart() {
            }
         }
         return string
-    }
-    else if (cart.length >= 3) {
-          string = "In your cart, you have "
-           for (i = 0; i < cart.length; i++){
-              if (i < 2){
-                string+= `${cart[i].itemName} at $${cart[i].itemPrice}, `
-              }   else {
-                 string+= `and ${cart[i].itemName} at $${cart[i].itemPrice}.`
-              }
-           }
-     return string
   }
+   else if (cart.length >= 3) {
+        string = "In your cart, you have "
+         for (i = 0; i < cart.length; i++){
+            if (i < 2){
+              string+= `${cart[i].itemName} at $${cart[i].itemPrice}, `
+            }   else {
+               string+= `and ${cart[i].itemName} at $${cart[i].itemPrice}.`
+            }
+         }
+   return string
+   }
 }
 
 
