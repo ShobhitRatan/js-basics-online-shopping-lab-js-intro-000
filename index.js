@@ -25,19 +25,24 @@ function viewCart() {
     return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}.`;
   }
   else if (cart.length === 2) {
-    return `In your cart, you have ${cart[0].itemName} at $${cart[0].itemPrice}, and ${cart[1].itemName} at $${cart[1].itemPrice}.`;
-  }
-  else {
-    var moreThanTwoItems = 'In your cart, you have ';
-    for (var i = 0; i < cart.length - 1; i++) {
-      moreThanTwoItems += `${cart[i].itemName} at $${cart[i].itemPrice},`;
+    var string = "In your cart, you have "
+        for (var i = 0; i < cart.length; i++){
+          if (i === 0){
+             string += `${cart[i].itemName} at $${cart[i].itemPrice}, and `
+           } else {
+                string += `${cart[i].itemName} at $${cart[i].itemPrice}.`
+           }
+        }
+        return string
     }
-    return moreThanTwoItems + `and ${cart[cart.length - 1].itemName} at $${cart[cart.length - 1].itemPrice}.`;
-  }
+
 }
+
 
 function total() {
   // write your code here
+  var total = 0;
+  for ()
 }
 
 function removeFromCart(item) {
