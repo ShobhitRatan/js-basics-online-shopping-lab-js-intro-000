@@ -35,7 +35,17 @@ function viewCart() {
         }
         return string
     }
-
+    else if (cart.length >= 3) {
+          string = "In your cart, you have "
+           for (i = 0; i < cart.length; i++){
+              if (i < 2){
+                string+= `${cart[i].itemName} at $${cart[i].itemPrice}, `
+              }   else {
+                 string+= `and ${cart[i].itemName} at $${cart[i].itemPrice}.`
+              }
+           }
+     return string
+  }
 }
 
 
